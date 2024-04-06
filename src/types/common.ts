@@ -1,4 +1,4 @@
-interface Foundation {
+type DonationFoundation = {
   // 기부처
   id: number;
   name: string;
@@ -15,19 +15,19 @@ interface Foundation {
     instagram?: string;
     kakao?: string;
   };
-  comments: Comment[]; // 기부처 후기(기부 한마디)
-}
+  comments: DonationComment[]; // 기부처 후기(기부 한마디)
+};
 
-interface Comment {
+type DonationComment = {
   id: number;
   name: string;
   content: string;
   createdAt: string;
-}
+};
 
-interface CertificationCard {
+type CertificationCard = {
   id: number;
   donationCount: number;
   donatorName: string;
   createdAt: string;
-}
+};
