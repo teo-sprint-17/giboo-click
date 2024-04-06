@@ -1,6 +1,5 @@
-'use client';
-
-import Image from 'next/image';
+import { DONATION_FOUNDATIONS } from '@/constants/donationFoundations';
+import { calculateDaysLeft } from '@/utils/date';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
@@ -8,36 +7,6 @@ import { EffectCoverflow, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const Carousel = () => {
-  const items = [
-    {
-      id: 1,
-      title: '하키선수의 꿈을 키우는\n12살 태우',
-      donationFoundation: '사단법인 기릭',
-      remainDay: 3,
-      onClick: () => {
-        console.log('clicked1');
-      },
-    },
-    {
-      id: 2,
-      title: '하키선수의 꿈을 키우는\n12살 태우2',
-      donationFoundation: '사단법인 기릭',
-      remainDay: 4,
-      onClick: () => {
-        console.log('clicked2');
-      },
-    },
-    {
-      id: 3,
-      title: '하키선수의 꿈을 키우는\n12살 태우3',
-      donationFoundation: '사단법인 기릭',
-      remainDay: 4,
-      onClick: () => {
-        console.log('clicked3');
-      },
-    },
-  ];
-
   return (
     <Swiper
       spaceBetween={-200}
@@ -55,24 +24,24 @@ const Carousel = () => {
       modules={[EffectCoverflow, Pagination]}
       className="mySwiper"
     >
-      {items.map(({ id, title, donationFoundation, remainDay, onClick }) => (
-        <SwiperSlide key={id} onClick={onClick}>
-          <div className="w-[292px] h-[400px] overflow-hidden	rounded-[10px]">
-            <div className="absolute w-full h-[50%] bg-gradient-to-t from-transparent via-white-100 to-white" />
-            <div className="absolute w-full py-[10px] px-[20px]">
-              <div className="font-['SUITE-Variable'] font-extrabold text-[24px] leading-29.95 text-left whitespace-pre-wrap">
-                {title}
-              </div>
-              <div className="flex justify-between font-['SUITE-Variable'] font-semibold text-[16px]">
-                <div className="">{donationFoundation}</div>
-                {remainDay >= 0 && <div className="">{`D-${remainDay}`}</div>}
+      {DONATION_FOUNDATIONS.map((foundation) => (
+        <SwiperSlide key={foundation.id} onClick={() => console.log('hi')}>
+          <div className="flex flex-col justify-between w-[292px] h-[400px] py-[10px] px-[20px] rounded-[10px] bg-[url('/images/donationFoundation/독거노인/독거노인1.jpeg')]">
+            {/* <div className="flex flex-col justify-between w-[292px] h-[400px] py-[10px] px-[20px] rounded-[10px] bg-[url('/images/donationFoundation/독거노인/독거노인1.jpeg')]"> */}
+            <div>
+              <p className='font-["SUITE Variable"] font-extrabold text-[24px] leading-29.95 text-left whitespace-pre-wrap'>
+                {foundation.title}
+              </p>
+              <div className='flex justify-between font-["SUITE Variable"] font-semibold text-[16px]'>
+                <p>{foundation.name}</p>
+                <p>{calculateDaysLeft(foundation.donationPeriod.end)}</p>
               </div>
             </div>
-
-            <div className="absolute w-full bottom-[10px] px-[20px]">
+            {/* // */}
+            <div className=" w-full bottom-[10px]">
               <div className="h-full bg-white bg-opacity-75 rounded-[10px] px-[10px] py-[14px] flex flex-col gap-[5px]">
                 <div className="w-full h-[10px] relative rounded-[20px] bg-[#00000033]">
-                  <div className={`w-[${62}%] h-full absolute rounded-[20px] top-0 left-0 bg-[#FF3838]`} />
+                  <div className={`w-[${62}%] h-full  rounded-[20px] top-0 left-0 bg-[#FF3838]`} />
                 </div>
                 <div className="w-full flex justify-between">
                   <div className="font-['SUITE-Variable']">총 620명이 참여중입니다.</div>
@@ -80,15 +49,7 @@ const Carousel = () => {
                 </div>
               </div>
             </div>
-
-            <Image
-              src="/assets/card-image1.jpeg"
-              className="w-full h-full object-cover"
-              alt=""
-              width={300}
-              height={0}
-              priority
-            />
+            {/* // */}
           </div>
         </SwiperSlide>
       ))}
