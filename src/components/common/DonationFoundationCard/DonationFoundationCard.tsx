@@ -6,7 +6,7 @@ type DonationFoundationType = {
   size?: 'sm';
 };
 
-const DonationFoundation = ({ foundation, size }: DonationFoundationType) => {
+const DonationFoundationCard = ({ foundation, size }: DonationFoundationType) => {
   const { title, name, mainImage, donationPeriod, donationCount, donationGoal } = foundation;
   const donationGoalPercentile = (donationCount / donationGoal) * 100;
   return (
@@ -55,4 +55,4 @@ const DonationFoundation = ({ foundation, size }: DonationFoundationType) => {
   );
 };
 
-export default DonationFoundation;
+export default DonationFoundationCard;
