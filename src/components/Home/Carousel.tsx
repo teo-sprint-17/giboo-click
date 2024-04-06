@@ -11,7 +11,7 @@ import DonationFoundationCard from '../common/DonationFoundationCard/DonationFou
 const Carousel = () => {
   return (
     <Swiper
-      spaceBetween={-200}
+      spaceBetween={-210}
       effect={'coverflow'}
       grabCursor={true}
       centeredSlides={true}
