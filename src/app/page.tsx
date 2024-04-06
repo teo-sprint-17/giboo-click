@@ -17,7 +17,7 @@ export default function App() {
         <Category isSelected={false} name={'이주민'} />
       </div>
       <Carousel />
-      <div className="mt-[56px] mx-auto bg-[#D9D9D9] w-[240px] px-[71px] py-[8px] rounded-[60px] text-center text-SUITE font-semibold text-[28px] leading-34.94 cursor-pointer">
+      <div className="mt-[56px] mb-[60px] mx-auto bg-[#D9D9D9] w-[240px] px-[71px] py-[8px] rounded-[60px] text-center text-SUITE font-semibold text-[28px] leading-34.94 cursor-pointer">
         기부하기
       </div>
     </>
