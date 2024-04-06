@@ -1,3 +1,4 @@
+import BottomNav from '@/components/common/BottomNav/BottomNav';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -17,8 +18,9 @@ const RootLayout = ({
   return (
     <html lang="ko">
       <body className={inter.className + ' flex justify-center'}>
-        <div className="relative max-w-[432px] min-w-[320px] w-full h-dvh bg-white shadow-lg rounded-lg p-6 overflow-y-scroll no-scrollbar">
-          {children}
+        <div className="max-w-[432px] min-w-[320px] w-full h-dvh bg-white shadow-lg rounded-lg flex flex-col">
+          <div className="overflow-scroll grow no-scrollbar">{children}</div>
+          <BottomNav />
         </div>
       </body>
     </html>
