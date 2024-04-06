@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   description: '기부클릭은 기부를 쉽게 할 수 있는 플랫폼입니다.',
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="ko">
       <body className={inter.className + ' flex justify-center'}>
@@ -21,4 +21,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
