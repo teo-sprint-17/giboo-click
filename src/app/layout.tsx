@@ -1,9 +1,11 @@
-import BottomNav from '@/components/common/BottomNav/BottomNav';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+
+import localFont from 'next/font/local';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+import BottomNav from '@/components/common/BottomNav/BottomNav';
+
+const font = localFont({ src: '../../public/assets/SUITE-Variable.woff2' });
 
 export const metadata: Metadata = {
   title: '기부클릭',
@@ -17,7 +19,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="ko">
-      <body className={inter.className + ' flex justify-center'}>
+      <body className={font.className + ' flex justify-center'}>
         <div className="max-w-[432px] min-w-[320px] w-full h-dvh bg-white shadow-lg rounded-lg flex flex-col">
           <div className="py-[82px] px-[30px] overflow-scroll grow no-scrollbar">{children}</div>
           <BottomNav />
