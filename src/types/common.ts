@@ -1,4 +1,4 @@
-interface Foundation {
+interface DonationFoundation {
   // 기부처
   id: number;
   name: string;
