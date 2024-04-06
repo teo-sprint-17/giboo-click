@@ -1,3 +1,5 @@
+'use client';
+
 import { DONATION_FOUNDATIONS } from '@/constants/donationFoundations';
 import { calculateDaysLeft } from '@/utils/date';
 import 'swiper/css';
@@ -26,8 +28,14 @@ const Carousel = () => {
     >
       {DONATION_FOUNDATIONS.map((foundation) => (
         <SwiperSlide key={foundation.id} onClick={() => console.log('hi')}>
-          <div className="flex flex-col justify-between w-[292px] h-[400px] py-[10px] px-[20px] rounded-[10px] bg-[url('/images/donationFoundation/독거노인/독거노인1.jpeg')]">
-            {/* <div className="flex flex-col justify-between w-[292px] h-[400px] py-[10px] px-[20px] rounded-[10px] bg-[url('/images/donationFoundation/독거노인/독거노인1.jpeg')]"> */}
+          <div
+            className="flex flex-col justify-between w-[292px] h-[400px] py-[10px] px-[20px] rounded-[10px]"
+            style={{
+              backgroundImage: `url('${foundation.mainImage}')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
             <div>
               <p className='font-["SUITE Variable"] font-extrabold text-[24px] leading-29.95 text-left whitespace-pre-wrap'>
                 {foundation.title}
@@ -37,7 +45,6 @@ const Carousel = () => {
                 <p>{calculateDaysLeft(foundation.donationPeriod.end)}</p>
               </div>
             </div>
-            {/* // */}
             <div className=" w-full bottom-[10px]">
               <div className="h-full bg-white bg-opacity-75 rounded-[10px] px-[10px] py-[14px] flex flex-col gap-[5px]">
                 <div className="w-full h-[10px] relative rounded-[20px] bg-[#00000033]">
@@ -49,7 +56,6 @@ const Carousel = () => {
                 </div>
               </div>
             </div>
-            {/* // */}
           </div>
         </SwiperSlide>
       ))}
