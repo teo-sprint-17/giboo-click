@@ -4,7 +4,7 @@ import Category from '@/components/common/Category/Category';
 
 export default function App() {
   return (
-    <div className="py-[82px] px-[30px]">
+    <div>
       <div className="whitespace-pre-wrap font-['SUITE-Variable'] mb-[50px]">
         기부는 <span className="font-semibold">기부클릭</span>
         이 할게요.
