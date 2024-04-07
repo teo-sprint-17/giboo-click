@@ -1,4 +1,4 @@
-import DonationStatus from '@/components/Mypage/DonationStatus';
+import DonationStatus from '@/components/Mypage/DonationStatus/DonationStatus';
 import MyDonation from '@/components/Mypage/MyDonation';
 import ProfileBox from '@/components/Mypage/ProfileBox';
 import Settings from '@/components/Mypage/Settings';
