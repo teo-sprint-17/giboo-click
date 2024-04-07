@@ -6,12 +6,12 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import DonationFoundation from '../common/DonationFoundation/DonationFoundation';
+import DonationFoundationCard from '../common/DonationFoundationCard/DonationFoundationCard';
 
 const Carousel = () => {
   return (
     <Swiper
-      spaceBetween={-200}
+      spaceBetween={-210}
       effect={'coverflow'}
       grabCursor={true}
       centeredSlides={true}
@@ -28,7 +28,7 @@ const Carousel = () => {
     >
       {DONATION_FOUNDATIONS.map((foundation) => (
         <SwiperSlide key={foundation.id} onClick={() => console.log('hi')}>
-          <DonationFoundation foundation={foundation} />
+          <DonationFoundationCard foundation={foundation} />
         </SwiperSlide>
       ))}
     </Swiper>

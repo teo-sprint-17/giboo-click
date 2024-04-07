@@ -1,7 +1,4 @@
-import type { DonationFoundation } from '@/types/common';
-
-import Link from 'next/link';
-
+import { DonationFoundation } from '@/types/common';
 import { calculateDaysLeft } from '@/utils/date';
 
 type DonationFoundationType = {
@@ -9,21 +6,24 @@ type DonationFoundationType = {
   size?: 'sm';
 };
 
-const DonationFoundation = ({ foundation, size }: DonationFoundationType) => {
-  const { id, title, name, mainImage, donationPeriod, donationCount, donationGoal } = foundation;
+const DonationFoundationCard = ({ foundation, size }: DonationFoundationType) => {
+  const { title, name, mainImage, donationPeriod, donationCount, donationGoal } = foundation;
   const donationGoalPercentile = (donationCount / donationGoal) * 100;
+
+  //bg-gradient-to-t from-transparent via-white to-white
+
   return (
-    <Link href={`/donation-foundation/${id}`}>
-      <div
-        className={`flex flex-col justify-between relative min-w-[292px] h-[400px] py-[10px] px-[20px] rounded-[10px] ${
-          size === 'sm' ? ' min-w-[240px] h-[320px]' : ' w-[292px] h-[400px]'
-        }`}
-        style={{
-          backgroundImage: `url('${mainImage}')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
+    <div
+      className={`flex flex-col justify-between relative min-w-[292px] h-[400px] rounded-[10px] ${
+        size === 'sm' ? ' min-w-[240px] h-[320px]' : ' w-[292px] h-[400px]'
+      }`}
+      style={{
+        backgroundImage: `url('${mainImage}')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="flex flex-col justify-between h-full py-[10px] px-[20px] bg-gradient-to-t from-transparent via-transparent to-white">
         <div>
           <p
             className={`font-extrabold leading-29.95 text-left whitespace-pre-wrap ${
@@ -58,8 +58,8 @@ const DonationFoundation = ({ foundation, size }: DonationFoundationType) => {
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 
-export default DonationFoundation;
+export default DonationFoundationCard;

@@ -1,6 +1,6 @@
 import type { DonationFoundation as TDonationFoundation } from '@/types/common';
 
-import DonationFoundation from '../common/DonationFoundation/DonationFoundation';
+import DonationFoundationCard from '../common/DonationFoundationCard/DonationFoundationCard';
 
 type Feed = {
   group: string;
@@ -15,7 +15,7 @@ const FeedGroupCard = ({ feed }: { feed: Feed }) => {
       <div className="overflow-x-auto no-scrollbar">
         <div className="flex  space-x-4">
           {donationFoundations.map((foundation) => (
-            <DonationFoundation key={foundation.id} foundation={foundation} size={'sm'} />
+            <DonationFoundationCard key={foundation.id} foundation={foundation} size={'sm'} />
           ))}
         </div>
       </div>
