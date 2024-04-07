@@ -56,7 +56,7 @@ const DonationButton = ({ activeSwiperId }: DonationButtonType) => {
                 <div className="w-full flex justify-between gap-[10px]">
                   <Button onClick={onClose} text="아니요" />
                   <Button
-                    onClick={session ? () => onDonate(activeSwiperId) : () => router.push('/login')}
+                    onClick={session ? () => onDonate(activeSwiperId) : () => router.push('/sign-in')}
                     text="네"
                     positive
                   />
