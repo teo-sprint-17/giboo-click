@@ -1,22 +1,24 @@
+import { useRouter } from 'next/navigation';
 import useSession from './useSession';
 
 const key = 'giboo_click';
 
 const useDonation = () => {
+  const router = useRouter();
   const session = useSession();
 
-  const isDonationComplete = (name: string) => session?.foundationDonation?.includes(name);
-  
-  const onDonate = (name: string) => {
+  const isDonationComplete = (id: number) => session?.foundationDonation?.includes(id);
+
+  const onDonate = (id: number) => {
     if (!session) return;
-    localStorage.setItem(
-      key,
-      JSON.stringify({
-        ...session,
-        totalDonationCount: session.totalDonationCount++,
-        foundationDonation: [...session.foundationDonation, name],
-      })
-    );
+    const updatedSession = {
+      ...session,
+      totalDonationCount: session.totalDonationCount + 1,
+      foundationDonation: session.foundationDonation ? [...session.foundationDonation, id] : [id], // Ensure the array exists, then append the ID
+    };
+
+    localStorage.setItem(key, JSON.stringify(updatedSession));
+    router.push('/donation-complete');
   };
 
   return { onDonate, isDonationComplete };
