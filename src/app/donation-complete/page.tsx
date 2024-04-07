@@ -8,12 +8,15 @@ import { DonationComment } from '@/types/common';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import useSession from '@/hooks/useSession';
+import { DONATION_FOUNDATIONS } from '@/constants/donationFoundations';
 
 // TODO: 이전 페이지에서 기부처 정보, 유저 정보 받아오기 -> 멘트, 사진 적용. 라우팅시 데이터 전달
 const DonationComplete = () => {
   const [cheeringvalue, setcheeringValue] = useState<DonationComment['content']>('');
   const [isAnonymous, setIsAnonymout] = useState<boolean>(false);
   const router = useRouter();
+  const { session } = useSession();
 
   const onSubmit = () => {
     // TODO: cheeringvalue, isAnonymous 데이터 처리...
@@ -34,12 +37,10 @@ const DonationComplete = () => {
             height={66}
             alt=""
           />
-          <strong className="font-extrabold leading-[35px] text-xl">
-            &#8216;하키선수의 꿈을 키우는 12살 태우&#8217; 에게
-            <br />
-            기부가 완료되었습니다.
+          <strong className="font-extrabold leading-[35px] text-xl break-keep">
+            {DONATION_FOUNDATIONS?.find((foundation) => session?.foundationDonation.includes(foundation.id))?.name}에 따듯한 마음 감사합니다.
           </strong>
-          <p className="pt-2.5 text-sm">당신의 기부로 태우가 하키 훈련비를 낼 수 있게 됐어요.</p>
+          <p className="pt-2.5 text-sm">기부는 기부클릭이 할게요.</p>
         </header>
 
         <div className="mt-[23px] mx-[50px]">
