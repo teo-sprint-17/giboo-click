@@ -10,7 +10,7 @@ const Settings = () => {
 
   return (
     <MypageSection title="설정">
-      <div className="flex justify-between">
+      <div className="flex justify-between" onClick={() => alert('준비중입니다!')}>
         <div>푸시 알림</div>
         {pushNotification ? (
           <Image
@@ -32,7 +32,7 @@ const Settings = () => {
           />
         )}
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between" onClick={() => alert('준비중입니다!')}>
         <div>프로모션/이벤트 알림 수신</div>
         {promotionNotification ? (
           <Image
