@@ -4,17 +4,13 @@ import AnonymousCheck from '@/components/DonationComplete/AnonymousCheck';
 import CheeringField from '@/components/DonationComplete/CheeringField';
 import Button from '@/components/common/Button';
 import LayerLayout from '@/components/common/LayerLayout';
-import { DonationComment, DonationFoundation } from '@/types/common';
+import { DonationComment } from '@/types/common';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-type Props = {
-  name: DonationFoundation['name'];
-};
-
 // TODO: 이전 페이지에서 기부처 정보, 유저 정보 받아오기 -> 멘트, 사진 적용. 라우팅시 데이터 전달
-const DonationComplete = ({ name }: Props) => {
+const DonationComplete = () => {
   const [cheeringvalue, setcheeringValue] = useState<DonationComment['content']>('');
   const [isAnonymous, setIsAnonymout] = useState<boolean>(false);
   const router = useRouter();
@@ -50,7 +46,7 @@ const DonationComplete = ({ name }: Props) => {
           <div className="p-[9px] bg-white rounded-[10px]">
             <Image
               src="/assets/images/donationComplete/money-dynamic-color.png"
-              alt={name}
+              alt=""
               width={1008}
               height={1008}
               priority
