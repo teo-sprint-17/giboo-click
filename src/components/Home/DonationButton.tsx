@@ -15,7 +15,7 @@ type DonationButtonType = { activeSwiperId: number };
 const DonationButton = ({ activeSwiperId }: DonationButtonType) => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  const session = useSession();
+  const { session } = useSession();
   const { onDonate, isDonationComplete } = useDonation();
 
   const onClose = () => {

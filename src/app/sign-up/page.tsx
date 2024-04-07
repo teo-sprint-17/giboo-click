@@ -7,6 +7,8 @@ import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { FormEvent, useEffect, useState } from 'react';
 
+import { useUser } from '@/context/UserContext';
+
 const SignUp = () => {
   const [userId, setUserId] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -15,6 +17,7 @@ const SignUp = () => {
   const currentStep = `${searchParams}`.replace('step=', '') || 'id';
   const [step, setStep] = useState<string>(currentStep);
   const router = useRouter();
+  const { onSignUp } = useUser();
 
   const isSamePassword = password.length > 0 && confirmPassword.length > 0 && password === confirmPassword;
 
@@ -24,10 +27,7 @@ const SignUp = () => {
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    localStorage.setItem(
-      'giboo_click',
-      JSON.stringify({ username: userId, issue_date: new Date(), totalDonationCount: 0, foundationDonation: [] })
-    );
+    onSignUp(userId);
     router.push('/');
   };
 

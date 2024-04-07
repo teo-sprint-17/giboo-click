@@ -5,13 +5,19 @@ import Image from 'next/image';
 import useSession from '@/hooks/useSession';
 
 const ProfileBox = () => {
-  const session = useSession();
+  const { session } = useSession();
   return (
     <div className="bg-[#fff] rounded-[10px] mt-[25px] pt-[22px] pb-[28px] px-[38px] drop-shadow-md">
       <div className="relative w-[120px] h-[120px] mx-auto flex justify-center items-center">
         <Image src="/images/profile_pic.png" width={120} height={120} alt="" />
         <div className="absolute bottom-0 right-0 w-[40px] h-[40px] rounded-full bg-[#000] flex justify-center items-center cursor-pointer">
-          <Image src="/assets/icons/vuesax/linear/edit.svg" width={24} height={24} alt="" onClick={() => alert('준비중입니다!')}/>
+          <Image
+            src="/assets/icons/vuesax/linear/edit.svg"
+            width={24}
+            height={24}
+            alt=""
+            onClick={() => alert('준비중입니다!')}
+          />
         </div>
       </div>
 
