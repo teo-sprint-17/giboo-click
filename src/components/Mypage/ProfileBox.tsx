@@ -1,6 +1,11 @@
+'use client';
+
 import Image from 'next/image';
 
+import useSession from '@/hooks/useSession';
+
 const ProfileBox = () => {
+  const session = useSession();
   return (
     <div className="bg-[#fff] rounded-[10px] mt-[25px] pt-[22px] pb-[28px] px-[38px] drop-shadow-md">
       <div className="relative w-[120px] h-[120px] mx-auto flex justify-center items-center">
@@ -10,7 +15,7 @@ const ProfileBox = () => {
         </div>
       </div>
 
-      <div className="mt-[12px] mb-[33px] font-extrabold text-center">뮤나</div>
+      <div className="mt-[12px] mb-[33px] font-extrabold text-center">{session?.username}</div>
 
       <div className="flex gap-[10px] items-center mb-[12px]">
         <Image
@@ -23,10 +28,8 @@ const ProfileBox = () => {
               'brightness(0) saturate(100%) invert(47%) sepia(91%) saturate(5999%) hue-rotate(343deg) brightness(108%) contrast(96%)',
           }}
         />
-
-        <span>현재까지 총 41회 기부했어요</span>
+        <span>현재까지 총 {session?.totalDonationCount ?? 0}회 기부했어요</span>
       </div>
-
       <div className="flex gap-[10px] items-center">
         <Image
           src="/assets/icons/vuesax/bold/medal-star.svg"
@@ -39,8 +42,7 @@ const ProfileBox = () => {
               'brightness(0) saturate(100%) invert(47%) sepia(91%) saturate(5999%) hue-rotate(343deg) brightness(108%) contrast(96%)',
           }}
         />
-
-        <span>보유한 인증서는 총 5개에요</span>
+        <span>보유한 인증서는 총 {(session?.foundationDonation?.length ?? 0) >= 1 ? 1 : 0}개에요</span>
       </div>
     </div>
   );
