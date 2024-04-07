@@ -30,7 +30,6 @@ export type CertificationCard = {
 
 export type User = {
   username: string;
-  totalDonation_count: number;
   issueDate: Date;
   totalDonationCount: number;
   foundationDonation: number[];
