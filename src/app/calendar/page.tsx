@@ -2,6 +2,7 @@
 
 import CalendarGrid from '@/components/Calendar/CalendarGrid';
 import CalendarHeader from '@/components/Calendar/CalendarHeader';
+import CertificationProgress from '@/components/common/Certification/CertificationProgress';
 import { useCalendar } from '@/hooks/useCalendar';
 
 const Calendar = () => {
@@ -15,6 +16,7 @@ const Calendar = () => {
         goToNextMonth={goToNextMonth}
       />
       <CalendarGrid calendarDate={calendarDate} eventDates={[1, 2, 6, 7]} />
+      <CertificationProgress count={4} />
     </div>
   );
 };

@@ -14,7 +14,7 @@ const CalendarGrid = ({ calendarDate, eventDates }: Props) => {
   const lastDate = getLastDate(currentYear, currentMonth);
 
   return (
-    <div className="w-full flex flex-col gap-[30px]">
+    <div className="w-full flex flex-col gap-[30px] mb-[110px]">
       <div className="grid grid-cols-7 items-center justify-items-center">
         <div>S</div>
         <div>M</div>
