@@ -1,5 +1,7 @@
 'use client';
 
+import './carousel.css';
+
 import { DONATION_FOUNDATIONS } from '@/constants/donationFoundations';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';

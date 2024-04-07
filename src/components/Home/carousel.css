@@ -1,0 +1,4 @@
+.swiper-slide-prev,
+.swiper-slide-next {
+  z-index: 0 !important;
+}
