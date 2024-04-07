@@ -33,5 +33,5 @@ export type User = {
   totalDonation_count: number;
   issueDate: Date;
   totalDonationCount: number;
-  foundationDonation: string[];
+  foundationDonation: number[];
 };
