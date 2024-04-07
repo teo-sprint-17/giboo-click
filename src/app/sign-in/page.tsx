@@ -10,9 +10,12 @@ const SignIn = () => {
   const [userId, setUserId] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const router = useRouter();
-
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    localStorage.setItem(
+      'giboo_click',
+      JSON.stringify({ username: userId, issue_date: new Date(), totalDonationCount: 0, foundationDonation: [] })
+    );
     router.push('/');
   };
 
@@ -36,6 +39,9 @@ const SignIn = () => {
           className="w-full h-[55px] mt-10 font-semibold rounded-[10px] text-white bg-[#FF3838] disabled:text-[#A19999] disabled:bg-[#D7D5D5]"
         >
           로그인하기
+        </button>
+        <button className="w-full mt-4 text-center text-[#A19999]" onClick={() => router.push('/sign-up')}>
+          회원가입
         </button>
       </form>
     </LayerLayout>
