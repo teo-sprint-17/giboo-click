@@ -85,7 +85,7 @@ const FoundationDetail = ({ params }: { params: { id: string } }) => {
         ) : (
           <div className="fixed bottom-0 left-0 right-0 h-[95px] flex justify-center items-center bg-white">
             <button
-              onClick={session ? () => setIsModalVisible(true) : () => router.push('/login')}
+              onClick={session ? () => setIsModalVisible(true) : () => router.push('/sign-in')}
               disabled={isDonationComplete(id)}
               className={`h-[50px] px-[71px] rounded-[20px] text-center text-SUITE text-white font-semibold text-[20px] leading-34.94 cursor-pointer`}
               style={{
