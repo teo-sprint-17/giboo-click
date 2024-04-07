@@ -12,7 +12,7 @@ const CalendarHeader = ({ month, goToPreviousMonth, goToNextMonth }: Props) => {
     <div className="w-full flex justify-between mb-[63px]">
       <div className="flex">
         <Image
-          src="/assets/icons/vuesax/linear/arrow-left.svg"
+          src="/assets/icons/vuesax/linear/chevron-left.svg"
           width={24}
           height={24}
           alt=""
@@ -21,7 +21,7 @@ const CalendarHeader = ({ month, goToPreviousMonth, goToNextMonth }: Props) => {
         />
         <div className="w-[189px] text-center">{`${month}월 기부 달력`}</div>
         <Image
-          src="/assets/icons/vuesax/linear/arrow-right.svg"
+          src="/assets/icons/vuesax/linear/chevron-right.svg"
           width={24}
           height={24}
           alt=""
