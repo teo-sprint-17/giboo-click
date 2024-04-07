@@ -49,7 +49,7 @@ const DonationButton = ({ activeSwiperId }: DonationButtonType) => {
                   height={66}
                   className="mb-[21px]"
                 />
-                <div className="text-20 font-semibold leading-24.96 text-center whitespace-pre-wrap mb-[30px]">{`'하키 선수의 꿈을 키우는 12살 태우'에게\n 기부하시겠습니까?`}</div>
+                <div className="text-20 font-semibold leading-24.96 text-center whitespace-pre-wrap mb-[30px]">{`기부하시겠습니까?`}</div>
                 <div className="text-base font-normal leading-19.97 text-center opacity-50 mb-[92px]">
                   기부는 하루 한 번만 가능해요.
                 </div>
