@@ -27,3 +27,11 @@ export type CertificationCard = {
   donatorName: string;
   createdAt: string;
 };
+
+export type User = {
+  username: string;
+  totalDonation_count: number;
+  issueDate: Date;
+  totalDonationCount: number;
+  foundationDonation: string[];
+};
