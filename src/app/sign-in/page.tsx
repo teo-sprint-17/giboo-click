@@ -37,10 +37,10 @@ const SignIn = () => {
         >
           로그인하기
         </button>
-        <button className="w-full mt-4 text-center text-[#A19999]" onClick={() => router.push('/sign-up')}>
-          회원가입
-        </button>
       </form>
+      <button className="w-full mt-4 text-center text-[#A19999]" onClick={() => router.push('/sign-up')}>
+        회원가입
+      </button>
     </LayerLayout>
   );
 };
