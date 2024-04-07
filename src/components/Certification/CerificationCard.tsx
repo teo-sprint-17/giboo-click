@@ -1,5 +1,4 @@
 import { CertificationCard } from '@/types/common';
-import { convertDateToDotDate, getMonth } from '@/utils/date';
 import DescriptionItem from './DescriptionItem';
 // import Image from 'next/image';
 
@@ -56,6 +55,19 @@ const CertificationCardItem = ({ donationCount, donatorName, createdAt }: Props)
       </button> */}
     </div>
   );
+};
+
+/**
+ * @return 'yy.mm.dd'
+ */
+export const convertDateToDotDate = (createdAt: string) => {
+  return createdAt.slice(2).replace(/\-/g, '.');
+};
+
+export const getMonth = (createdAt: string) => {
+  const monthString = createdAt.slice(5, 7);
+
+  return monthString[0] === '0' ? monthString[1] : monthString;
 };
 
 export default CertificationCardItem;
