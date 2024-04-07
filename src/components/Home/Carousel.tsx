@@ -1,6 +1,7 @@
 'use client';
 
 import type { Swiper as ISwiper } from 'swiper';
+import './carousel.css';
 
 import { DONATION_FOUNDATIONS } from '@/constants/donationFoundations';
 import 'swiper/css';
