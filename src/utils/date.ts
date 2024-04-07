@@ -16,3 +16,16 @@ export const calculateDaysLeft = (date: string) => {
     return `D-${Math.ceil(differenceInDays)}`;
   }
 };
+
+/**
+ * @return 'yy.mm.dd'
+ */
+export const convertDateToDotDate = (createdAt: string) => {
+  return createdAt.slice(2).replace(/\-/g, '.');
+};
+
+export const getMonth = (createdAt: string) => {
+  const monthString = createdAt.slice(5, 7);
+
+  return monthString[0] === '0' ? monthString[1] : monthString;
+};
