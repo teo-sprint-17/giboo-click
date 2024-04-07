@@ -3,9 +3,13 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
+import Button from '../common/Button';
 
 const DonationButton = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const onClose = () => {
+    setIsOpen(false);
+  };
 
   return (
     <>
@@ -20,12 +24,7 @@ const DonationButton = () => {
       {isOpen &&
         createPortal(
           <div className="absolute z-10 flex flex-col top-0 left-0 w-full h-full">
-            <div
-              onClick={() => {
-                setIsOpen(false);
-              }}
-              className="w-full h-full bg-[#000000B2]"
-            />
+            <div onClick={onClose} className="w-full h-full bg-[#000000B2]" />
             <div className="w-full bg-[#000000B2]">
               <div className="bg-[#fff] w-full flex flex-col justify-center items-center rounded-t-lg pt-[23px] pb-[38px] px-[40px]">
                 <Image src="/assets/double-hearts.svg" alt="" width={66} height={66} className="mb-[21px]" />
@@ -34,12 +33,8 @@ const DonationButton = () => {
                   기부는 하루 한 번만 가능해요.
                 </div>
                 <div className="w-full flex justify-between gap-[10px]">
-                  <div className="w-full py-[20px] rounded-[10px] bg-[#D9D9D9] text-center cursor-pointer">
-                    <span>아니요</span>
-                  </div>
-                  <div className="w-full py-[20px] rounded-[10px] bg-[#FF6A6A] text-center cursor-pointer">
-                    <span>네</span>
-                  </div>
+                  <Button onClick={onClose} text="아니요" />
+                  <Button onClick={() => {}} text="네" positive />
                 </div>
               </div>
             </div>
