@@ -6,7 +6,7 @@ import DonationStatusCard from './DonationStatusCard';
 import useSession from '@/hooks/useSession';
 
 const DonationStatus = () => {
-  const session = useSession();
+  const { session } = useSession();
 
   const myDonationFoundations = DONATION_FOUNDATIONS.filter((foundation) =>
     session?.foundationDonation.includes(foundation.id)

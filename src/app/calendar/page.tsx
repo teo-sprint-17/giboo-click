@@ -8,7 +8,7 @@ import useSession from '@/hooks/useSession';
 
 const Calendar = () => {
   const { calendarDate, goToPreviousMonth, goToNextMonth } = useCalendar();
-  const session = useSession();
+  const { session } = useSession();
 
   return (
     <div className="text-[20px] font-extrabold leading-[24.96px] text-center">

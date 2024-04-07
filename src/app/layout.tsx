@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 
 import BottomNav from '@/components/common/BottomNav/BottomNav';
+import UserProvider from '@/context/UserContext';
 
 const font = localFont({ src: '../../public/assets/SUITE-Variable.woff2' });
 
@@ -20,13 +21,15 @@ const RootLayout = ({
   return (
     <html lang="ko">
       <body className={font.className + ' flex justify-center'}>
-        <div
-          id="view"
-          className="relative max-w-[432px] min-w-[320px] w-full h-dvh bg-[#F6F4F2] shadow-lg rounded-lg flex flex-col"
-        >
-          <div className="py-[82px] px-[30px] overflow-scroll grow no-scrollbar">{children}</div>
-          <BottomNav />
-        </div>
+        <UserProvider>
+          <div
+            id="view"
+            className="relative max-w-[432px] min-w-[320px] w-full h-dvh bg-[#F6F4F2] shadow-lg rounded-lg flex flex-col"
+          >
+            <div className="py-[82px] px-[30px] overflow-scroll grow no-scrollbar">{children}</div>
+            <BottomNav />
+          </div>
+        </UserProvider>
       </body>
     </html>
   );

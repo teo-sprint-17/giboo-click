@@ -9,7 +9,7 @@ type Props = {
 };
 
 const CertificationProgress = ({ count }: Props) => {
-  const session = useSession();
+  const { session } = useSession();
   const currentMonthDonationPercentile = (100 / 15) * count + '%';
 
   return (

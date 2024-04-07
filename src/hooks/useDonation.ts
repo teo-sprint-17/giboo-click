@@ -5,7 +5,7 @@ const key = 'giboo_click';
 
 const useDonation = () => {
   const router = useRouter();
-  const session = useSession();
+  const { session } = useSession();
 
   const isDonationComplete = (id: number) => session?.foundationDonation?.includes(id);
 

@@ -17,7 +17,7 @@ import useDonation from '@/hooks/useDonation';
 const FoundationDetail = ({ params }: { params: { id: string } }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const router = useRouter();
-  const session = useSession();
+  const { session } = useSession();
   const { onDonate, isDonationComplete } = useDonation();
 
   const foundation = DONATION_FOUNDATIONS.find((foundation) => foundation.id === Number(params.id));
