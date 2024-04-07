@@ -10,8 +10,6 @@ const DonationFoundationCard = ({ foundation, size }: DonationFoundationType) =>
   const { title, name, mainImage, donationPeriod, donationCount, donationGoal } = foundation;
   const donationGoalPercentile = (donationCount / donationGoal) * 100;
 
-  //bg-gradient-to-t from-transparent via-white to-white
-
   return (
     <div
       className={`flex flex-col justify-between relative min-w-[292px] h-[400px] rounded-[10px] ${
