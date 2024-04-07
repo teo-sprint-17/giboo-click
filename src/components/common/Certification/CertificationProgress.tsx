@@ -5,19 +5,20 @@ type Props = {
 };
 
 const CertificationProgress = ({ count }: Props) => {
-  const currentMonthDonationPercentail = (100 / 15) * count + '%';
+  const currentMonthDonationPercentile = (100 / 15) * count + '%';
 
   return (
     <div>
-      <p className="text-xl font-extrabold">기부의 꽃을 피워주세요.</p>
+      <p className="text-xl text-left font-extrabold">기부 꽃을 피워주세요.</p>
 
       <div className="relative w-full h-25 px-5 py-[22px] mt-[17px] bg-white shadow-[0_10px_25px_rgba(0,0,0,0.1)] rounded-[10px]">
-        <p>기부 15회 완료하기</p>
+        <p className="text-left font-semibold">기부 15회 완료하기</p>
         <div className="relative h-[25px] mt-[10px] rounded-[10px] bg-[#EDEBE9] overflow-hidden">
           <div
             className={`absolute top-0 left-0 h-full bg-[#FF6A6A]`}
-            style={{ width: `${currentMonthDonationPercentail}` }}
+            style={{ width: `${currentMonthDonationPercentile}` }}
           ></div>
+          <p className="absolute top-1/2 left-1/2 font-semibold -translate-x-1/2 -translate-y-1/2">{count}/15</p>
         </div>
         <Image
           src="/assets/dandelion.png"
