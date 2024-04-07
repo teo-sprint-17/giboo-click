@@ -1,22 +1,38 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
 
-const inter = Inter({ subsets: ["latin"] });
+import localFont from 'next/font/local';
+import './globals.css';
+
+import BottomNav from '@/components/common/BottomNav/BottomNav';
+import UserProvider from '@/context/UserContext';
+
+const font = localFont({ src: '../../public/assets/SUITE-Variable.woff2' });
 
 export const metadata: Metadata = {
-  title: "기부클릭",
-  description: "기부클릭은 기부를 쉽게 할 수 있는 플랫폼입니다.",
+  title: '기부클릭',
+  description: '기부클릭은 기부를 쉽게 할 수 있는 플랫폼입니다.',
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="ko">
-      <body className={inter.className}>{children}</body>
+      <body className={font.className + ' flex justify-center'}>
+        <UserProvider>
+          <div
+            id="view"
+            className="relative max-w-[432px] min-w-[320px] w-full h-dvh bg-[#F6F4F2] shadow-lg rounded-lg flex flex-col"
+          >
+            <div className="py-[82px] px-[30px] overflow-scroll grow no-scrollbar">{children}</div>
+            <BottomNav />
+          </div>
+        </UserProvider>
+      </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
