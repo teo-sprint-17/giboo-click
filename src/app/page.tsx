@@ -1,5 +1,4 @@
-import Carousel from '@/components/Home/Carousel';
-import DonationButton from '@/components/Home/DonationButton';
+import DonationFoundations from '@/components/Home/DonationFoundations';
 import IntroModal from '@/components/Home/IntroModal';
 import Category from '@/components/common/Category/Category';
 
@@ -24,8 +23,7 @@ export default function App() {
             <Category isSelected={false} name={'#이주민'} />
           </div>
         </div>
-        <Carousel />
-        <DonationButton />
+        <DonationFoundations />
       </div>
     </>
   );

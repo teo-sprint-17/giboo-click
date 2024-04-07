@@ -1,5 +1,6 @@
 'use client';
 
+import type { Swiper as ISwiper } from 'swiper';
 import './carousel.css';
 
 import { DONATION_FOUNDATIONS } from '@/constants/donationFoundations';
@@ -10,7 +11,11 @@ import { EffectCoverflow, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import DonationFoundationCard from '../common/DonationFoundationCard/DonationFoundationCard';
 
-const Carousel = () => {
+type CarouselType = {
+  onSlideChange: (e: ISwiper) => void;
+};
+
+const Carousel = ({ onSlideChange }: CarouselType) => {
   return (
     <Swiper
       spaceBetween={-210}
@@ -26,6 +31,7 @@ const Carousel = () => {
         slideShadows: true,
       }}
       modules={[EffectCoverflow, Pagination]}
+      onSlideChange={onSlideChange}
       className="mySwiper"
     >
       {DONATION_FOUNDATIONS.map((foundation) => (

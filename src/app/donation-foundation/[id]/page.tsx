@@ -26,10 +26,10 @@ const FoundationDetail = ({ params }: { params: { id: string } }) => {
     return notFound();
   }
 
-  const { description, bodyImage, name } = foundation;
+  const { id, description, bodyImage, name } = foundation;
 
   const onConfirmDonationAndNavigate = () => {
-    onDonate(name);
+    onDonate(id);
     router.push('/donation-complete');
   };
 
@@ -86,15 +86,15 @@ const FoundationDetail = ({ params }: { params: { id: string } }) => {
           <div className="fixed bottom-0 left-0 right-0 h-[95px] flex justify-center items-center bg-white">
             <button
               onClick={session ? () => setIsModalVisible(true) : () => router.push('/login')}
-              disabled={isDonationComplete(name)}
+              disabled={isDonationComplete(id)}
               className={`h-[50px] px-[71px] rounded-[20px] text-center text-SUITE text-white font-semibold text-[20px] leading-34.94 cursor-pointer`}
               style={{
                 maxWidth: 'fit-content',
-                backgroundColor: `${isDonationComplete(name) ? '#d7d5d5' : '#FF6A6A'}`,
-                cursor: `${isDonationComplete(name) && 'not-allowed'}`,
+                backgroundColor: `${isDonationComplete(id) ? '#d7d5d5' : '#FF6A6A'}`,
+                cursor: `${isDonationComplete(id) && 'not-allowed'}`,
               }}
             >
-              {isDonationComplete(name) ? '기부완료' : '기부하기'}
+              {isDonationComplete(id) ? '기부완료' : '기부하기'}
             </button>
           </div>
         )}
