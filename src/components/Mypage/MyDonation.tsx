@@ -11,7 +11,7 @@ const MyDonation = () => {
       <div className="cursor-pointer" onClick={() => router.push('/certification')}>
         인증서 목록
       </div>
-      <div className="cursor-pointer">기부 보관함</div>
+      <div className="cursor-pointer" onClick={() => alert('준비중입니다!')}>기부 보관함</div>
     </MypageSection>
   );
 };

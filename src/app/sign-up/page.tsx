@@ -24,6 +24,11 @@ const SignUp = () => {
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    localStorage.setItem(
+      'giboo_click',
+      JSON.stringify({ username: userId, issue_date: new Date(), totalDonationCount: 0, foundationDonation: [] })
+    );
+    router.push('/');
   };
 
   return (
@@ -119,7 +124,6 @@ const SignUp = () => {
             <button
               type="submit"
               className="w-full h-[55px] mt-10 font-semibold rounded-[10px] text-white bg-[#FF3838] disabled:text-[#A19999] disabled:bg-[#D7D5D5]"
-              onClick={() => router.push('/')}
             >
               완료
             </button>

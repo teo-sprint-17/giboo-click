@@ -1,3 +1,5 @@
+'use client';
+
 import DonationFoundations from '@/components/Home/DonationFoundations';
 import IntroModal from '@/components/Home/IntroModal';
 import Category from '@/components/common/Category/Category';
@@ -13,8 +15,8 @@ export default function App() {
           <br />
           여러분은 <span className="font-semibold">따듯한 마음</span>만 전해주세요.
         </div>
-        <div className="overflow-y-scroll">
-          <div className="flex gap-[16px]">
+        <div className="overflow-y-scroll no-scrollbar">
+          <div className="flex gap-[16px]" onClick={() => alert('준비중입니다!')}>
             <Category isSelected={true} name={'#아동|청소년'} />
             <Category isSelected={false} name={'#지구촌'} />
             <Category isSelected={false} name={'#실버세대'} />
