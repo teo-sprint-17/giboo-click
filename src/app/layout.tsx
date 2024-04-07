@@ -22,7 +22,7 @@ const RootLayout = ({
       <body className={font.className + ' flex justify-center'}>
         <div
           id="view"
-          className="relative max-w-[432px] min-w-[320px] w-full h-dvh bg-white shadow-lg rounded-lg flex flex-col"
+          className="relative max-w-[432px] min-w-[320px] w-full h-dvh bg-[#F6F4F2] shadow-lg rounded-lg flex flex-col"
         >
           <div className="py-[82px] px-[30px] overflow-scroll grow no-scrollbar">{children}</div>
           <BottomNav />
