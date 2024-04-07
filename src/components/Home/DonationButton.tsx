@@ -39,7 +39,7 @@ const DonationButton = () => {
               </div>
             </div>
           </div>,
-          (document.getElementById('view') as HTMLElement) || document.body
+          (document.getElementById('view') as HTMLElement) ?? document.body
         )}
     </>
   );
