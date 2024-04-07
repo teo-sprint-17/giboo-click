@@ -40,7 +40,16 @@ const CalendarGrid = ({ calendarDate, eventDates }: Props) => {
               {!isEventDate ? (
                 <div>{day}</div>
               ) : (
-                <Image src="/assets/icons/vuesax/bold/heart.svg" width={24} height={24} alt="" />
+                <Image
+                  src="/assets/icons/vuesax/bold/heart.svg"
+                  width={24}
+                  height={24}
+                  alt=""
+                  style={{
+                    filter:
+                      'brightness(0) saturate(100%) invert(63%) sepia(73%) saturate(3142%) hue-rotate(320deg) brightness(101%) contrast(104%)',
+                  }}
+                />
               )}
             </div>
           );
