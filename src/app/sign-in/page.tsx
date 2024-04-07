@@ -12,10 +12,7 @@ const SignIn = () => {
   const router = useRouter();
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    localStorage.setItem(
-      'giboo_click',
-      JSON.stringify({ username: userId, issue_date: new Date(), totalDonationCount: 0, foundationDonation: [] })
-    );
+    if (!localStorage.getItem('giboo_click')) return alert('등록된 아이디가 없습니다.');
     router.push('/');
   };
 
