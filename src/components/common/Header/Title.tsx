@@ -5,7 +5,7 @@ type Props = Pick<HTMLAttributes<HTMLHeadingElement>, 'className'> & {
 };
 
 const Title = ({ className, children }: Props) => {
-  return <h2 className={className + 'text-xl font-bold text-center'}>{children}</h2>;
+  return <h2 className={'text-xl font-bold text-center ' + className}>{children}</h2>;
 };
 
 export default Title;
