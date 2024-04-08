@@ -35,7 +35,7 @@ const FoundationDetail = ({ params }: { params: { id: string } }) => {
 
   return (
     <LayerLayout>
-      <div className="flex flex-col gap-[20px] py-[82px]">
+      <div className="flex flex-col gap-[20px] pt-[82px] pb-[120px]">
         <Header />
         <DonationFoundationCard foundation={foundation} cardClasses="w-full rounded-none" />
         <DonationDescription paragraphs={description.split('\n\n').slice(0, 2)} />

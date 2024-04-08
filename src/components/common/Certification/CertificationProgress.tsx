@@ -30,7 +30,7 @@ const CertificationProgress = ({ count }: Props) => {
           alt=""
           width={580}
           height={580}
-          className="absolute right-6 bottom-[calc(100%_-_13px)] w-[145px] h-[145px]"
+          className="absolute right-6 bottom-[calc(100%_-_13px)] max-w-[145px] w-[40%] h-auto"
         />
       </div>
     </div>
