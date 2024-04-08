@@ -7,23 +7,20 @@ import LayerLayout from '@/components/common/LayerLayout';
 import { CertificationCard } from '@/types/common';
 import Image from 'next/image';
 
-const certifications: CertificationCard[] = [
-  {
-    id: 2,
-    donationCount: 21,
-    donatorName: '뮤나',
-    createdAt: '2024-03-26',
-  },
-  {
-    id: 1,
-    donationCount: 15,
-    donatorName: '뮤나',
-    createdAt: '2024-02-25',
-  },
-];
+import useSession from '@/hooks/useSession';
 
 const Certification = () => {
+  const { session } = useSession();
   const currentMonth = new Date().getMonth() + 1;
+
+  const certifications: CertificationCard[] = [
+    {
+      id: 2,
+      donationCount: session?.totalDonationCount ?? 0,
+      donatorName: session?.username ?? '사용자',
+      createdAt: '2024-04-08',
+    },
+  ];
 
   return (
     <LayerLayout>
@@ -43,7 +40,7 @@ const Certification = () => {
             {currentMonth}월
           </div>
 
-          <CertificationProgress count={2} />
+          <CertificationProgress count={session?.totalDonationCount ?? 1} />
 
           <ul className="flex flex-col gap-5">
             {certifications.map((certification) => {

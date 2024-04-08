@@ -37,7 +37,10 @@ const font = localFont({
 });
 
 export const metadata: Metadata = {
-  title: '기부클릭',
+  title: {
+    default: '기부클릭',
+    template: '%s | 기부클릭',
+  },
   description: '기부클릭은 기부를 쉽게 할 수 있는 플랫폼입니다.',
 };
 
