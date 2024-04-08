@@ -11,7 +11,7 @@ const InputField = ({ value, onChange, ...props }: Props) => {
     <div className="relative flex items-center justify-between w-full h-[55px] px-[20px] text-[#A19999] bg-white rounded-[10px]">
       <input
         type="text"
-        className="w-[200px]"
+        className="grow"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         required
