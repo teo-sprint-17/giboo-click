@@ -6,7 +6,35 @@ import './globals.css';
 import BottomNav from '@/components/common/BottomNav/BottomNav';
 import UserProvider from '@/context/UserContext';
 
-const font = localFont({ src: '../../public/assets/SUITE-Variable.woff2' });
+const font = localFont({
+  src: [
+    {
+      path: '../../public/assets/fonts/SUITE-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/assets/fonts/SUITE-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/assets/fonts/SUITE-SemiBold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../public/assets/fonts/SUITE-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../../public/assets/fonts/SUITE-ExtraBold.woff2',
+      weight: '800',
+      style: 'normal',
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: '기부클릭',
