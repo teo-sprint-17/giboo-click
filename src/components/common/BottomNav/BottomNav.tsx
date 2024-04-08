@@ -23,7 +23,7 @@ const BottomNav = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink href="/calendar" imgUrl="/assets/icons/vuesax/linear/calendar.svg">
+          <NavLink href={user ?? session ? '/calendar' : '/sign-in'} imgUrl="/assets/icons/vuesax/linear/calendar.svg">
             달력
           </NavLink>
         </li>
