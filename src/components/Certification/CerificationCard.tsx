@@ -2,23 +2,19 @@ import { CertificationCard } from '@/types/common';
 import DescriptionItem from './DescriptionItem';
 // import Image from 'next/image';
 
-type MonthlyContents = {
-  [month in '2' | '3']: {
-    title: string;
-    imgUrl: string;
-  };
-};
+// type MonthlyContents = {
+//   [month in '2']: {
+//     title: string;
+//     imgUrl: string;
+//   };
+// };
 
-const monthlyContents: MonthlyContents = {
-  '2': {
-    title: '겨울잠을 깨우는 따뜻한 기부',
-    imgUrl: '/assets/tea.png',
-  },
-  '3': {
-    title: '봄이 오는 소리',
-    imgUrl: '/assets/bear_tree.png',
-  },
-};
+// const monthlyContents: MonthlyContents = {
+//   '2': {
+//     title: '겨울잠을 깨우는 따뜻한 기부',
+//     imgUrl: '/assets/tea.png',
+//   },
+// };
 
 type Props = CertificationCard & {};
 
@@ -31,7 +27,7 @@ const CertificationCardItem = ({ donationCount, donatorName, createdAt }: Props)
       <p className="text-xs text-[#A19999] text-center">{month}월 기부증서</p>
       <div
         className="relative h-[220px] bg-center bg-contain bg-no-repeat"
-        style={{ backgroundImage: `url(${monthlyContents[month as keyof typeof monthlyContents].imgUrl})` }}
+        style={{ backgroundImage: `url(/assets/tea.png)` }}
       ></div>
 
       <dl className="flex flex-col gap-5 mt-[15px]">
