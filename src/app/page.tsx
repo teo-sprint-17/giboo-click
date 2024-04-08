@@ -3,11 +3,13 @@
 import DonationFoundations from '@/components/Home/DonationFoundations';
 import IntroModal from '@/components/Home/IntroModal';
 import Category from '@/components/common/Category/Category';
+import { useState } from 'react';
 
 export default function App() {
+  const [isModalOpen, setIsModalOpen] = useState(true);
+
   return (
     <>
-      <IntroModal />
       <div>
         <div className="whitespace-pre-wrap mb-[50px]">
           기부는 <span className="font-semibold">기부클릭</span>
@@ -26,6 +28,7 @@ export default function App() {
           </div>
         </div>
         <DonationFoundations />
+        {isModalOpen && <IntroModal onClose={() => setIsModalOpen(false)} />}
       </div>
     </>
   );
