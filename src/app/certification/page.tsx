@@ -1,3 +1,5 @@
+'use client';
+
 import CertificationCardItem from '@/components/Certification/CerificationCard';
 import CertificationProgress from '@/components/common/Certification/CertificationProgress';
 import Header from '@/components/common/Header/Header';
@@ -28,7 +30,7 @@ const Certification = () => {
       <Header
         title="인증서"
         rightButton={
-          <button type="button">
+          <button type="button" onClick={() => alert('준비중입니다!')}>
             <Image src="/assets/icons/vuesax/linear/element-3.svg" alt="갤러리 형식" width={24} height={24} />
           </button>
         }
