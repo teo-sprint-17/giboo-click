@@ -10,7 +10,7 @@ export default function App() {
 
   return (
     <>
-      <div>
+      <div className=' animate-fade-in-delay'>
         <div className="whitespace-pre-wrap mb-[50px]">
           기부는 <span className="font-semibold">기부클릭</span>
           이 할게요.
@@ -28,8 +28,8 @@ export default function App() {
           </div>
         </div>
         <DonationFoundations />
-        {isModalOpen && <IntroModal onClose={() => setIsModalOpen(false)} />}
       </div>
+        {isModalOpen && <IntroModal onClose={() => setIsModalOpen(false)} />}
     </>
   );
 }

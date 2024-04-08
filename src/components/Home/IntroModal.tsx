@@ -8,7 +8,7 @@ type Props = {
 
 const IntroModal = ({ onClose }: Props) => {
   return (
-    <div className="absolute z-10 flex flex-col top-0 left-0 w-full h-full">
+    <div className="absolute z-10 flex flex-col top-0 left-0 w-full h-full animate-fade-in-custom">
       <div onClick={onClose} className="w-full h-full bg-[#000000B2]" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full">
         <div className="bg-[#fff] rounded-[10px] mx-[30px] flex flex-col items-center justify-center overflow-hidden">
